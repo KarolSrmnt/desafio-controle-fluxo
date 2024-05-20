@@ -15,8 +15,10 @@ public class Contador {
 		int parametroDois = 0;
 			
 		try {
-			parametroUm = solicitarDados("Digite o primeiro parâmetro: ", input);
-			parametroDois = solicitarDados("Digite o segundo parâmetro: ", input);
+			System.out.print("Digite o primeiro parâmetro: ");
+			parametroUm = input.nextInt();
+			System.out.print("Digite o segundo parâmetro: ");
+			parametroDois = input.nextInt();
 		} catch (InputMismatchException e) {
 			System.out.println("Valor inválido. Por favor, digite um número inteiro.");
 		}
@@ -27,11 +29,6 @@ public class Contador {
 			System.out.println(e.getMessage());
 		}
 
-	}
-	
-	static int solicitarDados(String mensagem, Scanner input) {
-		System.out.print(mensagem);
-		return input.nextInt();
 	}
 
 	static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
